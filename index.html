@@ -202,17 +202,26 @@ var a = queryString.split("+");
 var name = a[0];
 var dp = a[1];
 var username = a[2];
+console.log(location.search.substring(1));
+console.log(a[2]);
+console.log(username);
 var classx = a[3];
 var admin = a[4];
+var logT = a[5];
+if(typeof localStorage.getItem("log") == "true"){}else{
 localStorage.setItem("name", name);  
 localStorage.setItem("pic", dp);  
 localStorage.setItem("username", username);  
 localStorage.setItem("classx", 'Class '+classx);  
-localStorage.setItem("admin", admin);
+localStorage.setItem("admin", admin);   
+localStorage.setItem("log", logT);   
+}
+
+console.log(localStorage.getItem("username"));
 function check(){
 }
 function openv(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
+  if(typeof localStorage.getItem("log") == "true"){
 window.open('./login');  
 }else{
   window.open("./class?c=5");
@@ -220,7 +229,7 @@ window.open('./login');
 }
   
 function openvi(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
+  if(typeof localStorage.getItem("log") == "true"){
 window.open('./login');  
 }else{
   window.open("./class?c=6");
@@ -228,7 +237,7 @@ window.open('./login');
 }
 
 function openvii(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
+  if(typeof localStorage.getItem("log") == "true"){
 window.open('./login');  
 }else{
   window.open("./class?c=7");
@@ -236,35 +245,35 @@ window.open('./login');
 }
 
 function openviii(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
+  if(typeof localStorage.getItem("log") == "true"){
 window.open('./login');  
 }else{
   window.open("./class?c=8");
 }
 }
 function openix(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
+  if(typeof localStorage.getItem("log") == "true"){
 window.open('./login');  
 }else{
   window.open("./class?c=9");
 }
 }
 function openx(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
+  if(typeof localStorage.getItem("log") == "true"){
 window.open('./login');  
 }else{
   window.open("./class?c=10");
 }
 }
 function openxi(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
-window.open('./login');  
+  if(typeof localStorage.getItem("log") == "true"){
+    window.open('./login');  
 }else{
   window.open("./class?c=11");
 }
 }
 function openxii(){
-  if(typeof sessionStorage.getItem("username") !== "null"){
+  if(typeof localStorage.getItem("log") == "true"){
 window.open('./login');  
 }else{
   window.open("./class?c=12");
@@ -272,4 +281,3 @@ window.open('./login');
 }
 </script>
 </html>
-        
