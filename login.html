@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>NEA - Login & Registration</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1">  
+  <meta property="og:title" content="NEA ( Made by Students )">
+<meta property="og:description" content="NEA Since 2024 ©">
+  <!--<meta property="og:image" content="https://avindiaultd.github.io/p/assets/award2024july.jpg">-->
+
+      <link rel="icon" type="image/x-icon" href="https://azadop.github.io/o/20231229_133452.png">
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel="stylesheet">
+  <meta name="description" content="EDUCATION IS NOT LIFE">
+  <meta name="author" content="NEA BY AV INDIA*">
+</head>
+<body><div id="overlay"></div>
+  <img class="loading" src="./class/ads/Loading.gif">
+  <div class="sa"><h1 class="Null" style="display: none;"></h1>
+  <h1>STUDENT'S ACCOUNT</h1><!--'-->
+<input id="name0" placeholder="Name" maxlength="30">
+<input id="phone0" placeholder="Phone Number" maxlength="13">
+<input id="email0" placeholder="Email">  
+<input id="address0" placeholder="Address">  
+        <div class="More">
+    <div class="Class">
+        <select name="Class" id="classx">
+                        <option value="N/A">N/A</option>
+          <option value="12">12</option>
+          <option value="11">11</option>
+          <option value="10">10</option>
+          <option value="9">9</option>
+          <option value="8">8</option>
+          <option value="7">7</option>
+          <option value="6">6</option>
+          <option value="5">5</option>
+  </select><h2>CLASS</h2></div>
+      <div class="section">
+            <select name="Section" id="sectionx">
+                            <option value="N/A">N/A</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+  </select><h2>SECTION</h2></div></div>
+    <button id="VP" onclick='Step1()'>VERIFY & PROCEED</button>
+    </div>
+    <div class="sa0">
+      <h1>STUDENT'S ACCOUNT</h1><!--'-->
+          <input type="file" class="js-fileElem" accept="image/*" style="display:none">
+  <div class="pic"><a href="#" class="js-fileSelect"><img id="set"src="https://avindiaultd.github.io/p/assets/noperson.png">  </a>
+  </div>
+        <h6># Pick Your Display Profile</h6>
+        <h2 id="username">Username : @azadverma</h2>
+        <h2 id="name">Name : Azad Verma</h2>
+        <h2 id="class">Class : 9th</h2>
+        <h2 id="section">Section : N/A</h2>
+        <h2 id="phonenumber">Phone Number : +91 88517 72685</h2>
+        <h2 id="email">Email : avindiaultd@gmail.com</h2>        
+        <h2 id="address">Address : N/A</h2>        
+            <button id="AM"onclick='Step2()'>ADD ME ON NEA</button>
+    </div>   
+ <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script> 
+<style>
+*{margin: 0px;}.sa{display: block;}.sa0{display: none;}
+#overlay {
+  position: fixed; 
+  display: ;
+  width: 100%;
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+  cursor: pointer;
+  display: none;
+}
+.loading{
+  border-radius: 15px;
+  text-align: center;  
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin: auto;
+  position: fixed;
+  z-index: 2;
+  left: 8vw;
+  right: 8vw;
+  top: 48vw;
+  display: none;
+}
+.sa0 h1{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}    
+.sa0 h2{  
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+}    
+.sa0 h6{  
+  font-size: 10px;
+  text-align: center;
+  margin-top: 10px;
+}        
+.sa0 .pic{
+  margin: auto;
+  width: 100px;
+  margin-top: 50px;
+}
+.sa0 .pic img{
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50px;
+  background-color: #f9f9f9;
+}    
+.sa0 #AM{
+  width: 90%;
+  height: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  margin-top: 40px;
+  font-size: 17px;
+  font-weight: bold;
+}    
+.sa h1{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+.sa input{
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  height: 60px;
+  background-color: #f5f5f5;
+  outline: none;
+  color: #000;
+  border: none;
+  margin-top: 10px;
+}
+.sa .More{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.sa .More select{
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  outline: none;
+  color: #000;
+  border: none;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.sa .More h2{  
+  font-size: 15px;
+  margin-top: 10px;
+}
+.sa #VP{
+  width: 90%;
+  height: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  margin-top: 40px;
+  font-size: 17px;
+  font-weight: bold;
+}
+</style>
+  <script>
+var username = '';
+var name = '';
+var classx = '';
+var phone = '';
+var section = '';
+var email = '';
+var dp = '';
+var address = '';
+var username0 = '';
+
+
+const config = {
+  apiKey: "AIzaSyDHL4CSEjJBdNUI4IozRI-7Suqd4UqUoDI",
+  authDomain: "avindia-db2bd.firebaseapp.com",
+  databaseURL: "https://avindia-db2bd-default-rtdb.firebaseio.com/",
+  projectId: "avindia-db2bd",
+  storageBucket: "avindia-db2bd.appspot.com",
+  messagingSenderId: "970872368951"
+};
+firebase.initializeApp(config);
+var db = firebase.database();
+const storage = firebase.storage();
+const storageRef = storage.ref();
+(() => {
+const imagesRef = storageRef.child('NEA/USERS/DP');
+const spaceRef = imagesRef.child('space.jpg');
+const fileSelect = document.querySelector('.js-fileSelect');
+const fileElem = document.querySelector('.js-fileElem');
+fileSelect.addEventListener('click', (e) => {
+e.preventDefault();
+if (fileElem) {
+fileElem.click();
+}
+});
+fileElem.addEventListener('change', (e) => {
+console.log(e.target.files);
+const fileUploads = Array.from(e.target.files).map((currFile) => {
+const fileRef = imagesRef.child(currFile.name);
+return fileRef.put(currFile).then((snapshot) => snapshot.downloadURL);
+});
+document.getElementById('overlay').style.display = 'block';
+document.querySelector('.loading').style.display = 'block';   
+Promise.all(fileUploads).then((items) => {
+  if(items == ''){}else{
+document.getElementById('set').src = items;
+    dp = items;
+    document.getElementById('overlay').style.display = 'none';
+document.querySelector('.loading').style.display = 'none';   
+  }
+});
+});
+})();  
+const USer = {
+  get : function () {
+      if(document.getElementById('name0').value == '' || document.getElementById('phone0').value == ''|| document.getElementById('email0').value == ''|| document.getElementById('address0').value == ''|| document.getElementById("classx").value == 'N/A')
+  {
+alert('Enter Your Name , Phone Number , Email , Class & Address');
+}
+  else{
+document.getElementById('overlay').style.display = 'block';
+document.querySelector('.loading').style.display = 'block';    
+  name = document.getElementById('name0').value;
+ classx = document.getElementById("classx").value;
+ phone = document.getElementById('phone0').value;
+ section = document.getElementById("sectionx").value;
+ email = document.getElementById('email0').value;
+ address = document.getElementById('address0').value;  
+username = name.replace(/[|&;$%@"<>()+, ]/g, "") + Math.floor((Math.random() * 100000) + 1);;
+//"
+username = username.toLowerCase();
+db.ref('nea/x/9/user/'+username).once('value', function(snapshot) {
+username0 = snapshot.child("username").val();        
+  });
+console.log(username);
+if(username == username0){  
+USer.get();  
+}else{  
+document.querySelector('.sa').style.display = 'none'; 
+document.querySelector('.sa0').style.display = 'block';   
+document.getElementById('overlay').style.display = 'none';
+document.querySelector('.loading').style.display = 'none';    
+document.getElementById('name').innerHTML = 'Name : '+name;  
+  document.getElementById('class').innerHTML = 'Class : '+classx;  
+  document.getElementById('section').innerHTML = 'Section : '+section;  
+  document.getElementById('address').innerHTML = 'Address : '+address;  
+  document.getElementById('username').innerHTML = 'Username : '+username;  
+  document.getElementById('phonenumber').innerHTML = 'Phone Number : '+phone;  
+  document.getElementById('email').innerHTML = 'Email : '+email;  
+} 
+  }
+  }
+}      
+function Step1(){
+USer.get();  
+}
+function Step2(){
+firebase.database().ref('nea/x/9/user/'+username).update({     
+'username': username,
+  'name': name,
+  'phone': '+91 '+phone,
+  'email': email,
+  'address': address,
+  'classx': 'Class '+classx,
+  'pic': dp,
+  'section': section,
+  'admin': 'Student'  
+});  
+localStorage.setItem("name", name);  
+localStorage.setItem("pic", dp);  
+localStorage.setItem("username", username);  
+localStorage.setItem("classx", 'Class '+classx);  
+localStorage.setItem("admin", 'Student');    
+window.open('./');  
+}
+
+  </script>
+</body>
+</html>
