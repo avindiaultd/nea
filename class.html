@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title></title>
+</head>
+<body>
+  <div class="nav">
+    <a>NEA</a>
+    <a class="c">New Education App › </a>
+    </div>
+    <div class="nav_text">
+        <p class="info">This app is made for <a style="color: #2196F3;">New Era Public School</a> by <a href="https://azadop.github.io/o/Home">AV INDIA ULTD</a>. Main features of this app are ask question with teachers and experts , Upload posts related to subjects and Online Chat</p>
+  </div>
+  <div class="portal">
+    <div class="all" onclick="open()">
+      <a>
+        <h1>View Class</h1>
+      </a>
+    </div>
+    <div class="all">
+      <a >
+        <h1>Community</h1>
+      </a>
+    </div>
+    <div class="all">
+      <a>
+        <h1>Load More...</h1>
+      </a>
+    </div>
+  </div>
+</body>
+<style>
+*{
+  margin: 0px;
+  font-family: verdana;
+}
+.nav{
+  background-color: #009688;
+  height: 35px;
+  padding-top: 15px;
+  box-shadow: 0px 5px 30px 0px #bbb;
+}
+.nav a{
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+}
+.nav .c{
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 10px;
+}
+.nav_text .info{
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.nav_text .info a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #8505ff;
+}
+.portal .all{
+  width: 100%;
+  height: 60px;
+  background: #eee;
+  margin-top: 10px;
+}
+.portal .all a{
+  text-decoration: none;
+  color: #000;
+  padding: 5px 5px 5px 5px;
+}
+.portal .all a h1{
+  font-size: 15px;
+  margin-left: 10px;
+}
+</style>
+<script>
+var Mydata = "|"+localStorage.getItem("name")+'%2B'+localStorage.getItem("pic")+'%2B'+localStorage.getItem("username")+'%2B'+localStorage.getItem("classx")+'%2B'+localStorage.getItem("admin")+'%2Btrue';
+
+//console.log(localStorage.getItem("log"));
+  if(localStorage.getItem("log") == "true"){ 
+  }else{
+var queryString = location.search.substring(1);
+var c = queryString.split("|");
+var classT = c[0];
+var DataT = c[1];
+DataT = decodeURIComponent(DataT);
+var a = DataT.split("+");
+var name = a[0];
+var dp = a[1];
+var username = a[2];
+console.log(a[2]);
+console.log(username);
+var classx = a[3];
+var admin = a[4];
+var logT = a[5];
+localStorage.setItem("name", name);  
+localStorage.setItem("pic", dp);  
+localStorage.setItem("username", username);  
+localStorage.setItem("classx", 'Class '+classx);  
+localStorage.setItem("admin", admin);   
+localStorage.setItem("log", logT)
+console.log(DataT);
+  }
+
+const d = document.querySelector(".c")
+  d.innerHTML = "New Education App › Class › "+classT;
+function open(){
+  if(localStorage.getItem("log") === "true"){
+window.open('./chat?9'Mydata);
+}else{
+  window.open('./login'); 
+}
+}
+</script>
+</html>
