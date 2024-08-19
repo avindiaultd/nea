@@ -197,7 +197,16 @@
 }
 </style>
 <script>
-var queryString = location.search.substring(1);
+
+
+var Mydata = "|"+localStorage.getItem("name")+'%2B'+localStorage.getItem("pic")+'%2B'+localStorage.getItem("username")+'%2B'+localStorage.getItem("classx")+'%2B'+localStorage.getItem("admin")+'%2Btrue';
+
+console.log(localStorage.getItem("log"));
+function check(){
+  if(localStorage.getItem("log") == "true"){
+ 
+  }else{
+    var queryString = location.search.substring(1);
 var a = queryString.split("+");
 var name = a[0];
 var dp = a[1];
@@ -208,7 +217,6 @@ console.log(username);
 var classx = a[3];
 var admin = a[4];
 var logT = a[5];
-if(typeof localStorage.getItem("log") == "true"){}else{
 localStorage.setItem("name", name);  
 localStorage.setItem("pic", dp);  
 localStorage.setItem("username", username);  
@@ -216,67 +224,64 @@ localStorage.setItem("classx", 'Class '+classx);
 localStorage.setItem("admin", admin);   
 localStorage.setItem("log", logT);   
 }
-
-console.log(localStorage.getItem("username"));
-function check(){
 }
 function openv(){
-  if(typeof localStorage.getItem("log") == "true"){
-window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+ window.open("./class?c=5"+Mydata);
 }else{
-  window.open("./class?c=5");
+  window.open('./login'); 
 }
 }
   
 function openvi(){
-  if(typeof localStorage.getItem("log") == "true"){
-window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+window.open("./class?c=6"+Mydata);
 }else{
-  window.open("./class?c=6");
+  window.open('./login'); 
 }
 }
 
 function openvii(){
-  if(typeof localStorage.getItem("log") == "true"){
-window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+window.open("./class?c=7"+Mydata);  
 }else{
-  window.open("./class?c=7");
+  window.open('./login'); 
 }
 }
 
 function openviii(){
-  if(typeof localStorage.getItem("log") == "true"){
-window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+window.open("./class?c=8"+Mydata);
 }else{
-  window.open("./class?c=8");
+  window.open('./login'); 
 }
 }
 function openix(){
-  if(typeof localStorage.getItem("log") == "true"){
-window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+window.open("./class.html?9"+Mydata); 
 }else{
-  window.open("./class?c=9");
+  window.open('./login'); 
 }
 }
 function openx(){
-  if(typeof localStorage.getItem("log") == "true"){
-window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+window.open("./class?c=10"+Mydata);
 }else{
-  window.open("./class?c=10");
+  window.open('./login'); 
 }
 }
 function openxi(){
-  if(typeof localStorage.getItem("log") == "true"){
-    window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+    window.open("./class?c=11"+Mydata);
 }else{
-  window.open("./class?c=11");
+  window.open('./login'); 
 }
 }
 function openxii(){
-  if(typeof localStorage.getItem("log") == "true"){
-window.open('./login');  
+  if(localStorage.getItem("log") === "true"){
+window.open("./class?c=12"+Mydata);
 }else{
-  window.open("./class?c=12");
+  window.open('./login'); 
 }
 }
 </script>
