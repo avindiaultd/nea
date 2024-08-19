@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>NEA ( Made by Students )</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">  
+  <meta property="og:title" content="NEA ( Made by Students )">
+<meta property="og:description" content="NEA Since 2024 ©">
+  <!--<meta property="og:image" content="https://avindiaultd.github.io/p/assets/award2024july.jpg">-->
+
+      <link rel="icon" type="image/x-icon" href="https://azadop.github.io/o/20231229_133452.png">
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel="stylesheet">
+  <meta name="description" content="EDUCATION IS NOT LIFE">
+  <meta name="author" content="NEA BY AV INDIA*">
+</head>
+<body onload="check()">
+  <div class="nav">
+    <a>NEA</a>
+    <a class="c">New Education App ( <b>E</b> for Education )</a>
+    </div>
+  <div class="nav_text">
+        <p class="info">This app is made for <a style="color: #2196F3;">New Era Public School</a> by <a href="https://azadop.github.io/o/Home">AV INDIA ULTD</a>. Main features of this app are ask question with teachers and experts , Upload posts related to subjects and Online Chat</p>
+  </div>
+  <div class="classes0">
+    <div class="xclass" onclick="openv()">
+      <h1>5th</h1>
+    </div>
+    <div class="xclass" onclick="openvi()">
+      <h1>6th</h1>
+    </div>
+  </div>
+  <div class="classes2"> 
+    <div class="xclass"onclick="openvii()">
+      <h1>7th</h1>
+    </div>
+    <div class="xclass"onclick="openviii()">
+      <h1>8th</h1>
+    </div>
+  </div>
+  <div class="classes">
+    <div class="xclass" onclick="openix()">
+      <h1>9th</h1>
+    </div>
+    <div class="xclass" onclick="openx()">
+      <h1>10th</h1>
+    </div>
+  </div>
+  <div class="classes1"> 
+    <div class="xclass"onclick="openxi()">
+      <h1>11th</h1>
+    </div>
+    <div class="xclass"onclick="openxii()">
+      <h1>12th</h1>
+    </div>
+  </div>
+</body>
+<style>
+*{
+  margin: 0px;
+  font-family: verdana;
+}
+.nav{
+  background-color: #009688;
+  height: 35px;
+  padding-top: 15px;
+  box-shadow: 0px 5px 30px 0px #bbb;
+}
+.nav a{
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+}
+.nav .c{
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 10px;
+}
+.nav_text .info{
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.nav_text .info a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #8505ff;
+}
+.tt ul{
+  list-style: none;
+  display: flex;
+  margin-left: -40px;
+}
+.tt ul li{
+  padding: 20px;
+}
+.tt ul li img{
+  width: 120px;
+  height: 120px;
+}
+.tt ul li .a{
+  margin-top: 30px;
+  width: 160px;
+  height: 50px;
+}
+.classes{
+  display: flex;
+  width: 300px;
+ // margin: auto;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.classes .xclass{
+  width: 150px;
+  background: #00C4B1;
+  height: 150px;
+  border-radius: 20px;
+  margin: 10px;
+}
+.classes .xclass h1{
+  width: 150px;
+  background: #none;
+  color: #fff;
+  margin-top: 51px;
+  height: 150px;
+  text-align: center;
+  border-radius: 20px;
+}
+.classes1{
+  display: flex;
+  width: 300px;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.classes1 .xclass{
+  width: 150px;
+  background: #00C4B1;
+  border-radius: 20px;
+  height: 150px;
+  margin: 10px;
+}
+.classes1 .xclass h1{
+  width: 150px;
+  background: #none;
+  color: #fff;
+  margin-top: 51px;
+  height: 150px;
+  text-align: center;
+  border-radius: 20px;
+}
+.classes0{
+  display: flex;
+  width: 300px;
+ // margin: auto;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.classes0 .xclass{
+  width: 150px;
+  background: #00C4B1;
+  height: 150px;
+  border-radius: 20px;
+  margin: 10px;
+}
+.classes0 .xclass h1{
+  width: 150px;
+  background: #none;
+  color: #fff;
+  margin-top: 51px;
+  height: 150px;
+  text-align: center;
+  border-radius: 20px;
+}
+.classes2{
+  display: flex;
+  width: 300px;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.classes2 .xclass{
+  width: 150px;
+  background: #00C4B1;
+  border-radius: 20px;
+  height: 150px;
+  margin: 10px;
+}
+.classes2 .xclass h1{
+  width: 150px;
+  background: #none;
+  color: #fff;
+  margin-top: 51px;
+  height: 150px;
+  text-align: center;
+  border-radius: 20px;
+}
+</style>
+<script>
+function check(){
+}
+function openv(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=5");
+}
+}
+  
+function openvi(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=6");
+}
+}
+
+function openvii(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=7");
+}
+}
+
+function openviii(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=8");
+}
+}
+function openix(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=9");
+}
+}
+function openx(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=10");
+}
+}
+function openxi(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=11");
+}
+}
+function openxii(){
+  if(typeof localStorage.getItem("username") !== "null"){
+window.open('./login');  
+}else{
+  window.open("./class?c=12");
+}
+}
+</script>
+</html>
+        
