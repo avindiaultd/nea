@@ -189,6 +189,11 @@
 }
 </style>
   <script>
+if(localStorage.getItem("log") === "true"){
+document.querySelector('.sa').style.display = 'none'; 
+document.querySelector('.sa0').style.display = 'none';   
+}else{
+}
 var username = '';
 var name = '';
 var classx = '';
@@ -300,7 +305,8 @@ localStorage.setItem("name", name);
 localStorage.setItem("pic", dp);  
 localStorage.setItem("username", username);  
 localStorage.setItem("classx", 'Class '+classx);  
-localStorage.setItem("admin", 'Student');    
+localStorage.setItem("admin", 'Student');
+localStorage.setItem("log", "true");     
 window.open('./index.html?'+name+'+'+dp+'+'+username+'+Class '+classx+'+Student+true');  
 }
 
