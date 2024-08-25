@@ -3,7 +3,14 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta property="og:title" content="NEA ( Made by Students )">
+<meta property="og:description" content="NEA Since 2024 ©">
+  <!--<meta property="og:image" content="https://avindiaultd.github.io/p/assets/award2024july.jpg">-->
+
+      <link rel="icon" type="image/x-icon" href="https://azadop.github.io/o/20231229_133452.png">
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel="stylesheet">
+  <meta name="description" content="EDUCATION IS NOT LIFE">
+  <meta name="author" content="NEA BY AV INDIA*">
   <meta name="viewport" content="width=device-width,initial-scale=1">  
   <title>Chat</title>
 </head>
@@ -451,4 +458,310 @@ const spaceRef = imagesRef.child('space.jpg');
 const fileSelect = document.querySelector('.js-fileSelect');
 const fileElem = document.querySelector('.js-fileElem');
 fileSelect.addEventListener('click', (e) => {
-e.preventDefau
+e.preventDefault();
+if (fileElem) {
+fileElem.click();
+}
+});
+fileElem.addEventListener('change', (e) => {
+console.log(e.target.files);
+const fileUploads = Array.from(e.target.files).map((currFile) => {
+const fileRef = imagesRef.child(currFile.name);
+return fileRef.put(currFile).then((snapshot) => snapshot.downloadURL);
+});
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'block';
+    document.getElementById('info1').innerHTML = 'Your Images are now uploading...';
+Promise.all(fileUploads).then((items) => {
+imageU = items;
+console.log(imageU);
+type = type + 'm';
+  imageU.forEach(function(item,index){  
+document.getElementById('ImgL').innerHTML = document.getElementById('ImgL').innerHTML + '<li oncontextmenu="return false;"><img onclick="openimg(this.src)" src="'+item+'"></li>';
+    }); 
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'none';
+    document.getElementById('info1').innerHTML = '';
+});
+});
+})();  
+(() => {
+const videosRef = storageRef.child('NEA/data/videos');
+const VspaceRef = videosRef.child('Vspace.mp4');
+const fileSelectV = document.querySelector('.js-fileSelectV');
+const fileElemV = document.querySelector('.js-fileElemV');  
+fileSelectV.addEventListener('click', (e) => {
+e.preventDefault();
+if (fileElemV) {
+fileElemV.click();
+}
+});
+fileElemV.addEventListener('change', (e) => {
+console.log(e.target.files);
+const fileUploads = Array.from(e.target.files).map((currFile) => {
+const fileRef = videosRef.child(currFile.name);
+return fileRef.put(currFile).then((snapshot) => snapshot.downloadURL);
+});
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'block';
+    document.getElementById('info1').innerHTML = 'Your Videos are now uploading...';
+Promise.all(fileUploads).then((items) => {
+videoU = items;
+console.log(videoU);
+type = type + 'v';
+  videoU.forEach(function(item,index){  
+//document.getElementById('ImgL').innerHTML = document.getElementById('ImgL').innerHTML + '<li oncontextmenu="return false;"><img onclick="openimg(this.id)" id="'+item+'" src=""></li>';
+    }); 
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'none';
+    document.getElementById('info1').innerHTML = '';
+});
+});  
+})();
+(() => {
+const mp3Ref = storageRef.child('NEA/data/audio');
+const AspaceRef = mp3Ref.child('Aspace.mp3');
+const fileSelectA = document.querySelector('.js-fileSelectA');
+const fileElemA = document.querySelector('.js-fileElemA');  
+fileSelectA.addEventListener('click', (e) => {
+e.preventDefault();
+if (fileElemA) {
+fileElemA.click();
+}
+});
+fileElemA.addEventListener('change', (e) => {
+console.log(e.target.files);
+const fileUploads = Array.from(e.target.files).map((currFile) => {
+const fileRef = mp3Ref.child(currFile.name);
+return fileRef.put(currFile).then((snapshot) => snapshot.downloadURL);
+});
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'block';
+    document.getElementById('info1').innerHTML = 'Your Audios are now uploading...';
+Promise.all(fileUploads).then((items) => {
+mp3U = items;
+console.log(mp3U);
+type = type + 'a';
+  mp3U.forEach(function(item,index){  
+//document.getElementById('ImgL').innerHTML = document.getElementById('ImgL').innerHTML + '<li oncontextmenu="return false;"><img onclick="openimg(this.src)" src="'+item+'"></li>';
+    }); 
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'none';
+    document.getElementById('info1').innerHTML = '';
+});
+});  
+})();
+(() => {
+const pdfsRef = storageRef.child('NEA/data/pdfs');
+const PspaceRef = pdfsRef.child('Vspace.pdf');
+const fileSelectP = document.querySelector('.js-fileSelectP');
+const fileElemP = document.querySelector('.js-fileElemP');  
+fileSelectP.addEventListener('click', (e) => {
+e.preventDefault();
+if (fileElemP) {
+fileElemP.click();
+}
+});
+fileElemP.addEventListener('change', (e) => {
+console.log(e.target.files);
+const fileUploads = Array.from(e.target.files).map((currFile) => {
+const fileRef = pdfsRef.child(currFile.name);
+return fileRef.put(currFile).then((snapshot) => snapshot.downloadURL);
+});
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'block';
+    document.getElementById('info1').innerHTML = 'Your Pdfs are now uploading...';
+Promise.all(fileUploads).then((items) => {
+pdfU = items;
+console.log(pdfU);
+type = type + 'p';
+  pdfU.forEach(function(item,index){  
+//document.getElementById('ImgL').innerHTML = document.getElementById('ImgL').innerHTML + '<li oncontextmenu="return false;"><img onclick="openimg(this.src)" src="'+item+'"></li>';
+    }); 
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'none';
+    document.getElementById('info1').innerHTML = '';
+});
+});  
+})();
+function openPick(){document.getElementById('a').style.display = 'none';document.getElementById('b').style.display = 'block';document.querySelector(".file_pick").style.visibility = "visible";}
+function closePick(){document.getElementById('a').style.display = 'block';document.getElementById('b').style.display = 'none';document.querySelector(".file_pick").style.visibility = "hidden";}
+var RTIMG = '';
+function downloadIMG(){
+  window.open(RTIMG);
+}
+function closeIMG(){
+  document.getElementById('image_view').style.display = 'none';
+}
+function Null_1(){
+  document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'none';
+    document.getElementById('info1').innerHTML = '';
+}
+function Null_2(){
+  document.querySelector(".Folder").style.display = 'block';
+  document.querySelector("#myfiles").style.display = 'none';
+  document.querySelector("#myfiles2").style.display = 'block';
+//  if(document.getElementById('ImgL').innerHTML.includes('<!--N-->') == true){    document.querySelector(".nav_I").style.backgroundColor = '#FF0000';    document.querySelector(".nav_I").style.display = 'block';    document.getElementById('info1').innerHTML = 'Your Folder is empty !</b>';  }else{    document.querySelector(".Folder").style.display = 'block';  document.querySelector("#myfiles").style.display = 'none';  document.querySelector("#myfiles2").style.display = 'block';  }
+}
+function Null_3(){
+  document.querySelector(".Folder").style.display = 'none';
+  document.querySelector("#myfiles").style.display = 'block';
+  document.querySelector("#myfiles2").style.display = 'none';
+}
+function openimg(src_){
+  
+//  document.getElementById('a').style.display = 'none';
+  document.getElementById('image_view').style.display = 'block';
+  document.getElementById('image_').src = src_;
+  RTIMG = src_;
+}
+function AdInfo(){
+  document.getElementById('adinfo').style.display = 'block';
+}
+function AdInfoNull(){
+  document.getElementById('adinfo').style.display = 'none';
+}
+function send(){
+  if(document.getElementById('message').value === '' ){}else{type = 't';}
+  if(type === '' ){
+console.log('none');
+  }else{
+    db.ref('nea/x/'+classT+'/user/'+Muser+'/chat').once('value', function(snapshot) {
+        LastC = snapshot.child("chat").val();
+    });
+  db.ref('nea/x/'+classT+'/ChatindeX').once('value', function(snapshot) {
+//var val = childSnapshot.val();
+indeX = snapshot.child("indeX").val();      
+  });
+    
+    
+  //console.log(indeX);
+  if (indeX === 0) {document.getElementById('sendT').innerHTML = 'replay';
+    document.querySelector(".nav_I").style.backgroundColor = '#FF0000';
+    document.querySelector(".nav_I").style.display = 'block';
+    document.getElementById('info1').innerHTML = 'Your Message could not be send !!! <b>Try Again !</b>';} else {
+    indeX = indeX + 1;        
+  if(LastC == ''){
+Last0 = indeX;  
+  }else{
+    Last0 = LastC + ',' + indeX;
+  }
+type = 't';
+if(type.includes('t') == true){
+ToSend = ToSend + '<div class="text"><h6>&nbsp;</h6><p>'+document.getElementById('message').value+'</p><h6>&nbsp;</h6></div>';
+}
+//if(type.includes('m') == true){
+  imageU.forEach(function(item,index){  
+ToSend = ToSend + '<div class="image" oncontextmenu="return false;"><img onclick="openimg(this.src)" src="'+item+'"></div>';
+    });  
+//}
+//if(type.includes('v') == true){
+  videoU.forEach(function(item,index){  
+ToSend = ToSend + '<div class="video"><video src="'+item+'" controls fullscreen></video></div>';
+    });  
+//}
+//if(type.includes('p') == true){
+  pdfU.forEach(function(item,index){  
+ToSend = ToSend + '<div class="pdf"><a href="'+item+'"><img src="https://avindiaultd.github.io/p/assets/viewpdf.jpg"></a></div>';
+    });  
+//}
+//if(type.includes('a') === true){
+mp3U.forEach(cal)
+//}
+console.log(ToSend);  
+firebase.database().ref('nea/x/'+classT+'/ChatindeX').update({     
+  'indeX': indeX
+});  
+    firebase.database().ref('nea/x/'+classT+'/chat/'+indeX).update({     
+  'no': indeX,
+  'name': Mname,
+  'pic': Mpic,
+  'username': Muser,
+  'classx': Mclass,
+  'admin': Madmin,
+'content': ToSend  
+});  
+  firebase.database().ref('nea/x/'+classT+'/user/'+Muser+'/chat').update({     
+'chat': Last0
+});        
+imageU = [];
+ videoU = [];
+ mp3U = [];
+ pdfU = [];  
+  document.getElementById('message').value = '';
+      type = '' ;
+    ToSend = '';
+      document.getElementById('sendT').innerHTML = 'send';
+      document.querySelector(".nav_I").style.backgroundColor = '#009688';
+    document.querySelector(".nav_I").style.display = 'none';
+    document.getElementById('info1').innerHTML = '';
+}
+  }
+    
+function cal(item,index){
+  ToSend = ToSend + '<div class="voice"><audio src="'+item+'" controls></audio></div>';
+  console.log(ToSend);  
+  //R.call();
+  
+}
+}
+function catll(){
+
+db.ref('nea/x/'+classT+'/chat/').once('value', function(snapshot){
+if(snapshot.exists()){
+snapshot.forEach(function(childSnapshot){
+var val = childSnapshot.val();
+var key = childSnapshot.key;
+CU_type = (val.types);
+Uname = (val.name);  
+Upic = (val.pic);
+User = (val.username);  
+Uclass = (val.classx);
+Uadmin = (val.admin);  
+ContentIndeX = (val.no);  
+ToGet = (val.content);  
+contentCall = '<div class="content"><div class="sender"><div class="pic"><img src="'+Upic+'"></div><div class="sender_text_content"><div class="name"><h1>'+Uname+'</h1></div><div class="subdata"><h6>'+User+' • '+Uclass+' • '+Uadmin+'</h6></div></div></div><div class="content_type">'+ToGet+'</div></div>';
+container.innerHTML += contentCall;
+console.log(contentCall);  
+});
+}
+});
+}
+//container.innerHTML = console.log();
+db.ref('nea/x/'+classT+'/chat/').on('child_added', function(snapshot){
+var val = snapshot.val();
+var key = snapshot.key;
+User = (val.username);  
+  ToGet = (val.content);  
+ContentIndeX = (val.no);  
+Uname = (val.name);  
+Upic = (val.pic);
+   Uclass = (val.classx);
+Uadmin = (val.admin);  
+  
+     contentUpdate = container.innerHTML;
+ // contentUpdate = '';
+contentUpdate += '<div class="content"><div class="sender"><div class="pic"><img src="'+Upic+'"></div><div class="sender_text_content"><div class="name"><h1>'+Uname+'</h1></div><div class="subdata"><h6>'+User+' • '+Uclass+' • '+Uadmin+'</h6></div></div></div><div class="content_type">'+ToGet+'</div></div>';
+ container.innerHTML = '';
+container.innerHTML += contentUpdate;
+  
+//console.log(contentUpdate);  
+        window.scrollTo(0,document.body.scrollHeight);
+  document.getElementById('overlay').style.display = 'none';
+document.querySelector('.loading').style.display = 'none'; 
+   });
+//window.onscroll = function() {ScrollMy()};
+const navE = document.querySelector('.nav');
+function ScrollMy() {
+  if (document.documentElement.scrollTop > 1000) {
+    navE.style.display = 'none';
+  } else {
+    navE.style.display = 'block';
+  }
+}
+document.getElementById('overlay').style.display = 'block';
+document.querySelector('.loading').style.display = 'block'; 
+</script>
+</body>
+</html>
