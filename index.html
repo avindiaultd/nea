@@ -203,8 +203,8 @@ var Mydata = "|"+localStorage.getItem("name")+'%2B'+localStorage.getItem("pic")+
 
 console.log(localStorage.getItem("log"));
 function check(){
-  if(localStorage.getItem("log") == "true"){
- 
+  if(localStorage.getItem("log") === "true"){
+      
   }else{
     var queryString = location.search.substring(1);
 var a = queryString.split("+");
