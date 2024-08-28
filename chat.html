@@ -3,16 +3,9 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta property="og:title" content="NEA ( Made by Students )">
-<meta property="og:description" content="NEA Since 2024 ©">
-  <!--<meta property="og:image" content="https://avindiaultd.github.io/p/assets/award2024july.jpg">-->
-
-      <link rel="icon" type="image/x-icon" href="https://azadop.github.io/o/20231229_133452.png">
-  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel="stylesheet">
-  <meta name="description" content="EDUCATION IS NOT LIFE">
-  <meta name="author" content="NEA BY AV INDIA*">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1">  
-  <title>Chat</title>
+  <title>NEA - Community</title>
 </head>
 <body onload="">
   <div id="overlay"></div>
@@ -26,7 +19,7 @@
   <div class="nav">
 
     <a>NEA</a>
-    <a class="c">New Education App › Class 9 › Chat</a>
+    <a class="c" id="det0"></a>
     </div>
 <!--  <div class="nav_text">
         <p class="info">This app is made for <a style="color: #2196F3;">New Era Public School</a> by <a href="https://azadop.github.io/o/Home">AV INDIA ULTD</a>. Main features of this app are ask question with teachers and experts , Upload posts related to subjects and Online Chat</p>
@@ -294,7 +287,7 @@
   top: 48vw;
   display: none;
 }
-.nav_I { background-color: #009688;position: fixed;bottom: 60px;width: 100%;display: none;z-index: 1;}
+.nav_I { background-color: #009688;position: fixed;bottom: 60px;width: 100%;display: none;z-index: 1;border-top-left-radius: 10px 10px;border-top-right-radius: 10px 10px;padding: 0px 0px 10px 0px;}
 
 .nav_I a{font-size: 0px;display: none;}
 .nav_I h6{margin: 10px;color: #fff;}
@@ -369,7 +362,7 @@ h1 a{text-align: center;margin: 10px;}
 
 .chatcontainer .content .sender .sender_text_content .subdata h6 { font-size: 10px; margin-top: 0px; font-weight: 400; }
 
-.send_ { display: flex; position: fixed; bottom: 0px; z-index: 1; background: rgb(255, 255, 255); width: 100%; padding: 5px 0px; }
+.send_ { display: flex; position: fixed; bottom: 0px; z-index: 1; background: rgb(255, 255, 255); width: 100%; padding: 10px 0px; border-top-left-radius: 10px 10px;border-top-right-radius: 10px 10px;}
 
 .send_ .text { margin-left: 10px; margin-right: 5px; width: 100%; }
 
@@ -383,10 +376,13 @@ h1 a{text-align: center;margin: 10px;}
 
 .send_ .send button { border: none; border-radius: 25px; height: 50px; width: 50px; margin-left: -5px; margin-right: 15px; }  
   </style>
-<script>
+<script>    
   if(localStorage.getItem("log") === "true"){var queryString = location.search.substring(1);
 var c = queryString.split("|");
-var classT = c[0];}else{
+    var classT = c[0];
+    var det = document.getElementById('det0');
+    det.innerHTML = "New Education App › Class "+classT+" › Community";    
+  }else{
 var queryString = location.search.substring(1);
 var c = queryString.split("|");
 var classT = c[0];
@@ -436,7 +432,7 @@ var Uadmin = '';
 var ContentIndeX = '';
 var Mname = decodeURIComponent(localStorage.getItem("name")) ;
 var Mpic = localStorage.getItem("pic") ;
-var Muser = '@'+decodeURIComponent(localStorage.getItem("username")) ;
+var Muser = decodeURIComponent(localStorage.getItem("username")) ;
 var Mclass = decodeURIComponent(localStorage.getItem("classx")) ;
 var Madmin = decodeURIComponent(localStorage.getItem("admin")) ;
 var container = document.getElementById('container');
@@ -641,6 +637,7 @@ indeX = snapshot.child("indeX").val();
     document.querySelector(".nav_I").style.backgroundColor = '#FF0000';
     document.querySelector(".nav_I").style.display = 'block';
     document.getElementById('info1').innerHTML = 'Your Message could not be send !!! <b>Try Again !</b>';} else {
+     
     indeX = indeX + 1;        
   if(LastC == ''){
 Last0 = indeX;  
@@ -745,6 +742,8 @@ Uadmin = (val.admin);
 contentUpdate += '<div class="content"><div class="sender"><div class="pic"><img src="'+Upic+'"></div><div class="sender_text_content"><div class="name"><h1>'+Uname+'</h1></div><div class="subdata"><h6>'+User+' • '+Uclass+' • '+Uadmin+'</h6></div></div></div><div class="content_type">'+ToGet+'</div></div>';
  container.innerHTML = '';
 container.innerHTML += contentUpdate;
+document.getElementById('overlay').style.display = 'none';
+document.querySelector('.loading').style.display = 'none';   
   
 //console.log(contentUpdate);  
         window.scrollTo(0,document.body.scrollHeight);
