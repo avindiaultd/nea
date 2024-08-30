@@ -388,6 +388,9 @@ h1 a{text-align: center;margin: 10px;}
   if(localStorage.getItem("log") === "true"){var queryString = location.search.substring(1);
 var c = queryString.split("|");
     var classT = c[0];
+   if(classT === ""){
+      classT = "9";
+    }
     var det = document.getElementById('det0');
     det.innerHTML = "New Education App › Class "+classT+" › Community";    
   }else{
@@ -405,13 +408,18 @@ console.log(username);
 var classx = a[3];
 var admin = a[4];
 var logT = a[5];
+if(logT === "true"){
 localStorage.setItem("name", name);  
 localStorage.setItem("pic", dp);  
 localStorage.setItem("username", username);  
 localStorage.setItem("classx",  classx);  
 localStorage.setItem("admin", admin);   
 localStorage.setItem("log", logT)
-console.log(DataT);
+console.log(DataT);    
+    }
+ else{
+document.querySelector(".send_").style.display = 'none';   
+ }
   }
 var ToSend = '';
 var ToGet = '';
