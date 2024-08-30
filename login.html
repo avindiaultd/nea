@@ -6,8 +6,7 @@
      <meta name="viewport" content="width=device-width,initial-scale=1">  
   <meta property="og:title" content="NEA ( Made by Students )">
 <meta property="og:description" content="NEA Since 2024 ©">
-  <!--<meta property="og:image" content="https://avindiaultd.github.io/p/assets/award2024july.jpg">-->
-
+  
       <link rel="icon" type="image/x-icon" href="https://azadop.github.io/o/20231229_133452.png">
   <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel="stylesheet">
   <meta name="description" content="EDUCATION IS NOT LIFE">
@@ -21,6 +20,7 @@
   <div class="sa"><h1 class="Null" style="display: none;"></h1>
   <h1>STUDENT'S ACCOUNT</h1><!--'-->
 <input id="name0" placeholder="Name" maxlength="30">
+<input id="pass0" placeholder="Password">    
 <input id="phone0" placeholder="Phone Number" maxlength="13">
 <input id="email0" placeholder="Email">  
 <input id="address0" placeholder="Address">  
@@ -45,6 +45,7 @@
           <option value="C">C</option>
           <option value="D">D</option>
   </select><h2>SECTION</h2></div></div>
+     <h6 onclick="TurnA()" id="Turn"><u>You already have an account ? Login</u></h6>
     <button id="VP" onclick='Step1()'>VERIFY & PROCEED</button>
     </div>
     <div class="sa0">
@@ -54,6 +55,7 @@
   </div>
         <h6># Pick Your Display Profile</h6>
         <h2 id="username">Username : @azadverma</h2>
+        <h2 id="pass">Password : 17229</h2>
         <h2 id="name">Name : Azad Verma</h2>
         <h2 id="class">Class : 9th</h2>
         <h2 id="section">Section : N/A</h2>
@@ -62,11 +64,40 @@
         <h2 id="address">Address : N/A</h2>        
             <button id="AM"onclick='Step2()'>ADD ME ON NEA</button>
     </div>   
+      <div class="sa2">
+         <h1>STUDENT'S ACCOUNT</h1><!--'-->
+<input id="name1" placeholder="Username" maxlength="30">
+<input id="pass1" placeholder="Password">    
+         <div class="More">
+    <div class="Class">
+        <select name="Class" id="classx1">
+                        <option value="N/A">N/A</option>
+          <option value="12">12</option>
+          <option value="11">11</option>
+          <option value="10">10</option>
+          <option value="9">9</option>
+          <option value="8">8</option>
+          <option value="7">7</option>
+          <option value="6">6</option>
+          <option value="5">5</option>
+  </select><h2>CLASS</h2></div>
+      <div class="section">
+            <select name="Section" id="sectionx1">
+                            <option value="N/A">N/A</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+  </select><h2>SECTION</h2></div></div>    
+     <h6 onclick="TurnB()" id="Turn"><u>You don't have an account ? Registration</u></h6>        
+               <button id="LO" onclick='Step3()'>LOGIN</button>
+      </div>      
+      
  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script> 
 <style>
-*{margin: 0px;}.sa{display: block;}.sa0{display: none;}
+*{margin: 0px;font-family: verdana;}.sa{display: none;}.sa1{display: none;}.sa0{display: none;}sa2{display: none;}
 #overlay {
   position: fixed; 
   display: ;
@@ -96,6 +127,65 @@
   top: 48vw;
   display: none;
 }
+.sa2 h1{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+.sa2 #Turn{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 300;
+}    
+.sa2 input{
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  height: 60px;
+  background-color: #f5f5f5;
+  outline: none;
+  color: #000;
+  border: none;
+  margin-top: 10px;
+} 
+.sa2 .More{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.sa2 .More select{
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  outline: none;
+  color: #000;
+  border: none;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.sa2 .More h2{  
+  font-size: 15px;
+  margin-top: 10px;
+}  
+.sa2 #LO{
+  width: 90%;
+  height: 60px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  margin-top: 150px;
+  font-size: 17px;
+  font-weight: bold;
+}      
 .sa1 h1 button{
   width: 200px;
   height: 60px;
@@ -166,6 +256,14 @@
   margin-bottom: 10px;
   font-size: 17px;
 }
+.sa #Turn{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 300;
+}  
 .sa input{
   margin: 0px;
   width: 100%;
@@ -213,9 +311,15 @@
 </style>
   <script>
 if(localStorage.getItem("log") === "true"){
-document.querySelector('.sa').style.display = 'none'; 
-document.querySelector('.sa0').style.display = 'none';   
+  document.querySelector('.sa').style.display = 'none'; 
+document.querySelector('.sa0').style.display = 'none';
+document.querySelector('.sa1').style.display = 'block';  
+  document.querySelector('.sa2').style.display = 'none';  
 }else{
+  document.querySelector('.sa').style.display = 'block'; 
+document.querySelector('.sa0').style.display = 'none';
+  document.querySelector('.sa1').style.display = 'none';
+document.querySelector('.sa2').style.display = 'none';  
 }
 var username = '';
 var name = '';
@@ -225,6 +329,8 @@ var section = '';
 var email = '';
 var dp = '';
 var address = '';
+var password = '';
+var password0 = '';
 var username0 = '';
 
 
@@ -271,9 +377,9 @@ document.querySelector('.loading').style.display = 'none';
 })();  
 const USer = {
   get : function () {
-      if(document.getElementById('name0').value == '' || document.getElementById('phone0').value == ''|| document.getElementById('email0').value == ''|| document.getElementById('address0').value == ''|| document.getElementById("classx").value == 'N/A')
+      if(document.getElementById('name0').value == '' || document.getElementById('phone0').value == ''|| document.getElementById('email0').value == ''|| document.getElementById('address0').value == ''|| document.getElementById('pass0').value == ''||document.getElementById("classx").value == 'N/A')
   {
-alert('Enter Your Name , Phone Number , Email , Class & Address');
+alert('Enter Your Name , Password , Phone Number , Email , Class & Address');
 }
   else{
 document.getElementById('overlay').style.display = 'block';
@@ -283,11 +389,12 @@ document.querySelector('.loading').style.display = 'block';
  phone = document.getElementById('phone0').value;
  section = document.getElementById("sectionx").value;
  email = document.getElementById('email0').value;
- address = document.getElementById('address0').value;  
+ address = document.getElementById('address0').value;
+password = document.getElementById('pass0').value;    
 username = name.replace(/[|&;$%@"<>()+, ]/g, "") + Math.floor((Math.random() * 100000) + 1);;
 //"
 username = username.toLowerCase();
-db.ref('nea/x/9/user/'+username).once('value', function(snapshot) {
+db.ref('nea/x/user/'+username).once('value', function(snapshot) {
 username0 = snapshot.child("username").val();        
   });
 console.log(username);
@@ -304,18 +411,23 @@ document.getElementById('name').innerHTML = 'Name : '+name;
   document.getElementById('address').innerHTML = 'Address : '+address;  
   document.getElementById('username').innerHTML = 'Username : '+username;  
   document.getElementById('phonenumber').innerHTML = 'Phone Number : '+phone;  
+  document.getElementById('pass').innerHTML = 'Password : '+password;  
   document.getElementById('email').innerHTML = 'Email : '+email;  
 } 
   }
   }
 }      
+function baxk(){
+  window.open('./');
+}
 function Step1(){
 USer.get();  
 }
 function Step2(){
-firebase.database().ref('nea/x/9/user/'+username).update({     
+firebase.database().ref('nea/x/user/'+username).update({     
 'username': username,
   'name': name,
+  'password': password,
   'phone': '+91 '+phone,
   'email': email,
   'address': address,
@@ -324,17 +436,62 @@ firebase.database().ref('nea/x/9/user/'+username).update({
   'section': section,
   'admin': 'Student'  
 });  
-localStorage.setItem("name", name);  
+localStorage.setItem("name", name); 
+localStorage.setItem("pass", password);   
 localStorage.setItem("pic", dp);  
 localStorage.setItem("username", username);  
 localStorage.setItem("classx", 'Class '+classx);  
-localStorage.setItem("admin", 'Student');
-localStorage.setItem("log", "true");     
+localStorage.setItem("admin", 'Student');    
 window.open('./index.html?'+name+'+'+dp+'+'+username+'+Class '+classx+'+Student+true');  
 }
-function baxk(){
-  window.open('./');
+function Step3(){
+  if(document.getElementById('name1').value == '' || document.getElementById('pass1').value == ''||document.getElementById("classx1").value == 'N/A'){
+    alert('Enter Your Name & Password & Class');
+  }else{
+username = document.getElementById('name1').value;
+classx = document.getElementById("classx1").value;
+password = document.getElementById('pass1').value; 
+    db.ref('nea/x/user/'+username).once('value', function(snapshot) {
+username0 = snapshot.child("username").val();    
+password0 = snapshot.child("password").val();     
+//console.log(username0);  
+//console.log(password0);     
+if(username === username0){
+if(password === password0){
+db.ref('nea/x/user/'+username).once('value', function(snapshot) {  
+  
+localStorage.setItem("name", snapshot.child("name").val()); 
+localStorage.setItem("pass", password);   
+localStorage.setItem("pic", snapshot.child("pic").val());  
+localStorage.setItem("username", username);  
+localStorage.setItem("classx", snapshot.child("classx").val());  
+localStorage.setItem("admin", snapshot.child("admin").val());    
+  
+var Mydata = localStorage.getItem("name")+'%2B'+localStorage.getItem("pic")+'%2B'+localStorage.getItem("username")+'%2B'+localStorage.getItem("classx")+'%2B'+localStorage.getItem("admin")+'%2Btrue';
+
+window.open('./index.html?'+Mydata);  
+});
+}else{
+  alert('Wrong Password !');
+}   
+}else{
+ alert('Wrong Username !'); 
+}  
+  });
+  }
 }
+function TurnA(){  
+document.querySelector('.sa').style.display = 'none'; 
+document.querySelector('.sa0').style.display = 'none';
+  document.querySelector('.sa1').style.display = 'none';
+document.querySelector('.sa2').style.display = 'block';    
+}
+function TurnB(){  
+document.querySelector('.sa').style.display = 'block'; 
+document.querySelector('.sa0').style.display = 'none';
+  document.querySelector('.sa1').style.display = 'none';
+document.querySelector('.sa2').style.display = 'none';    
+}  
   </script>
 </body>
 </html>
