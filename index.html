@@ -206,7 +206,7 @@ function check(){
   if(localStorage.getItem("log") === "true"){
  Mydata = "|"+'class';     
   }else{
-    var queryString = location.search.substring(1);
+   var queryString = location.search.substring(1) + location.hash;
 var a = queryString.split("+");
 var name = a[0];
 var dp = a[1];
