@@ -635,11 +635,11 @@ function AdInfoNull(){
   document.getElementById('adinfo').style.display = 'none';
 }
 function send(){
-  if(document.getElementById('message').value === '' ){}else{type = 't';}
+    if(document.getElementById('message').value === '' ){}else{type = 't';}
   if(type === '' ){
 console.log('none');
   }else{
-    db.ref('nea/x/'+classT+'/user/'+Muser+'/chat').once('value', function(snapshot) {
+    db.ref('nea/x/user/'+Muser+'/'+classT).once('value', function(snapshot) {
         LastC = snapshot.child("chat").val();
     });
   db.ref('nea/x/'+classT+'/ChatindeX').once('value', function(snapshot) {
@@ -655,7 +655,7 @@ indeX = snapshot.child("indeX").val();
     document.getElementById('info1').innerHTML = 'Your Message could not be send !!! <b>Try Again !</b>';} else {
      
     indeX = indeX + 1;        
-  if(LastC == ''){
+  if(LastC === ''){
 Last0 = indeX;  
   }else{
     Last0 = LastC + ',' + indeX;
@@ -695,7 +695,7 @@ firebase.database().ref('nea/x/'+classT+'/ChatindeX').update({
   'admin': Madmin,
 'content': ToSend  
 });  
-  firebase.database().ref('nea/x/'+classT+'/user/'+Muser+'/chat').update({     
+  firebase.database().ref('nea/x/user/'+Muser+'/'+classT+'/chat').update({     
 'chat': Last0
 });        
 imageU = [];
