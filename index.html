@@ -58,7 +58,7 @@
   margin: 0px;
   font-family: verdana;
 }
-.nav{
+/*.nav{
   background-color: #009688;
   height: 35px;
   padding-top: 15px;
@@ -75,17 +75,41 @@
   color: #fff;
   font-weight: 300;
   font-size: 10px;
-}
+}*/
+.nav { background-color: #fff; height: 35px; padding-top: 15px; box-shadow: rgb(187, 187, 187) 0px 0px 0px 0px;position: fixed; width: 100%;top: 0;margin-left: 5px;
+  margin-right: 5px;}
+.nav a { margin-left: 10px; color: #009688; font-weight: 400; font-size: 20px; }
+.nav .c { margin-left: 10px; color: #009688; font-weight: 300; font-size: 10px; }
+
 .nav_text .info{
   font-weight: 300;
   font-size: 14px;
-  margin-top: 10px;
-  margin-left: 5px;
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  border: 1px solid #00C4B1;
+  padding: 10px 10px 10px 10px;
 }
 .nav_text .info a{
   text-decoration: none;
   font-weight: 500;
   color: #8505ff;
+  background: linear-gradient(to right, white, hsl(0, 0%, 0%) 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite linear;
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 600px;
+  }
+  100% {
+    background-position: 600px;
+  }
 }
 .tt ul{
   list-style: none;
@@ -113,15 +137,16 @@
 }
 .classes .xclass{
   width: 150px;
-  background: #00C4B1;
+  background: #fff;
   height: 150px;
   border-radius: 20px;
+  border: 1px solid #00C4B1;
   margin: 10px;
 }
 .classes .xclass h1{
   width: 150px;
   background: #none;
-  color: #fff;
+  color: #00C4B1;
   margin-top: 51px;
   height: 150px;
   text-align: center;
@@ -135,15 +160,16 @@
 }
 .classes1 .xclass{
   width: 150px;
-  background: #00C4B1;
-  border-radius: 20px;
+  background: #fff;
   height: 150px;
+  border-radius: 20px;
+  border: 1px solid #00C4B1;
   margin: 10px;
 }
 .classes1 .xclass h1{
   width: 150px;
   background: #none;
-  color: #fff;
+  color: #00C4B1;
   margin-top: 51px;
   height: 150px;
   text-align: center;
@@ -158,15 +184,16 @@
 }
 .classes0 .xclass{
   width: 150px;
-  background: #00C4B1;
+  background: #fff;
   height: 150px;
   border-radius: 20px;
+  border: 1px solid #00C4B1;
   margin: 10px;
 }
 .classes0 .xclass h1{
   width: 150px;
   background: #none;
-  color: #fff;
+  color: #00C4B1;
   margin-top: 51px;
   height: 150px;
   text-align: center;
@@ -180,19 +207,23 @@
 }
 .classes2 .xclass{
   width: 150px;
-  background: #00C4B1;
-  border-radius: 20px;
+  background: #fff;
   height: 150px;
+  border-radius: 20px;
+  border: 1px solid #00C4B1;
   margin: 10px;
 }
 .classes2 .xclass h1{
   width: 150px;
   background: #none;
-  color: #fff;
+  color: #00C4B1;
   margin-top: 51px;
   height: 150px;
   text-align: center;
   border-radius: 20px;
+}
+@media screen and (min-width: 601px) {
+.nav_text{width: 500px;}
 }
 </style>
 <script>
