@@ -424,7 +424,7 @@ function Step1(){
 USer.get();  
 }
 function Step2(){
-firebase.database().ref('nea/x/user/'+username).update({     
+firebase.database().ref('nea/x/user/'+'@'+username).update({     
 'username': '@'+username,
   'name': name,
   'password': password,
@@ -441,8 +441,9 @@ localStorage.setItem("pass", password);
 localStorage.setItem("pic", dp);  
 localStorage.setItem("username", '@'+username);  
 localStorage.setItem("classx", 'Class '+classx);  
-localStorage.setItem("admin", 'Student');    
-window.open('./index.html?'+name+'+'+dp+'+'+'@'+username+'+Class '+classx+'+Student+true');  
+var Mydata = localStorage.getItem("name")+'+'+localStorage.getItem("pic")+'+'+localStorage.getItem("username")+'+'+localStorage.getItem("classx")+'+'+localStorage.getItem("admin")+'+true';
+console.log(decodeURIComponent(Mydata));
+window.open('./index.html?'+Mydata);  
 }
 function Step3(){
   if(document.getElementById('name1').value == '' || document.getElementById('pass1').value == ''||document.getElementById("classx1").value == 'N/A'){
