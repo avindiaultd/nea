@@ -755,7 +755,7 @@ Uadmin = (val.admin);
   
      contentUpdate = container.innerHTML;
  // contentUpdate = '';
-contentUpdate += '<div class="content"><div class="sender"><div class="pic"><img src="'+Upic+'"></div><div class="sender_text_content"><div class="name"><h1>'+Uname+'</h1></div><div class="subdata"><h6>'+User+' • '+Uclass+' • '+Uadmin+'</h6></div></div></div><div class="content_type">'+ToGet+'</div></div>';
+contentUpdate += '<div class="content"><div class="sender"><div class="pic"><img src="'+Upic+'"oncontextmenu="return false;" onclick="openimg()"></div><div class="sender_text_content"><div class="name"><h1>'+Uname+'</h1></div><div class="subdata"><h6>'+User+' • '+Uclass+' • '+Uadmin+'</h6></div></div></div><div class="content_type">'+ToGet+'</div></div>';
  container.innerHTML = '';
 container.innerHTML += contentUpdate;
 document.getElementById('overlay').style.display = 'none';
