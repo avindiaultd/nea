@@ -436,7 +436,10 @@ const config = {
 firebase.initializeApp(config);
 var db = firebase.database();
 function check(){ 
-db.ref('nea/x/12').on('value', function(snapshot){
+var MyClass = localStorage.getItem("classx");
+ MyClass = MyClass.replace(/Class /,'');
+ //console.log(MyClass);
+db.ref('nea/x/'+MyClass).on('value', function(snapshot){
 var val = snapshot.val();
 var key = snapshot.key;   
 var Annou = (val.Alrt);
