@@ -115,5 +115,15 @@ window.open('https://avindiaultd.github.io/nea/chat.html?9'+Mydata);
 //  window.open('./login'); 
 
 }
+db.ref('nea/x/user/'+localStorage.getItem("username")).on('value', function(snapshot){
+var val = snapshot.val();
+var key = snapshot.key;
+var change = (val.change);   
+console.log(change);  
+if(change === "change"){
+  console.log(change);
+  window.location.href = './login?change';
+}else{}
+});      
 </script>
 </html>
