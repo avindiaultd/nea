@@ -444,6 +444,7 @@ localStorage.setItem("classx", 'Class '+classx);
 var Mydata = localStorage.getItem("name")+'+'+localStorage.getItem("pic")+'+'+localStorage.getItem("username")+'+'+localStorage.getItem("classx")+'+'+localStorage.getItem("admin")+'+true';
 console.log(decodeURIComponent(Mydata));
 window.open('./index.html?'+Mydata);  
+localStorage.setItem("log","true");
 }
 function Step3(){
   if(document.getElementById('name1').value == '' || document.getElementById('pass1').value == ''||document.getElementById("classx1").value == 'N/A'){
@@ -471,6 +472,7 @@ localStorage.setItem("admin", snapshot.child("admin").val());
 var Mydata = localStorage.getItem("name")+'+'+localStorage.getItem("pic")+'+'+localStorage.getItem("username")+'+'+localStorage.getItem("classx")+'+'+localStorage.getItem("admin")+'+true';
 console.log(decodeURIComponent(Mydata));
 window.open('./index.html?'+Mydata);
+localStorage.setItem("log","true");
 });
 }else{
   alert('Wrong Password !');
@@ -507,6 +509,7 @@ localStorage.setItem("admin", snapshot.child("admin").val());
 var Mydata = localStorage.getItem("name")+'+'+localStorage.getItem("pic")+'+'+localStorage.getItem("username")+'+'+localStorage.getItem("classx")+'+'+localStorage.getItem("admin")+'+true';
 console.log(decodeURIComponent(Mydata));
 window.location.href = './index.html?'+Mydata;  
+localStorage.setItem("log","true"); 
 });
 firebase.database().ref('nea/x/user/'+username).update({     
 'change': 'changed'
