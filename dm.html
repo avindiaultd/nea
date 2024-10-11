@@ -609,6 +609,7 @@ db.ref('nea/x/user/dm/'+classT+' to '+Muser+'/chat/1').once('value', function(sn
 db.ref('nea/x/user/dm/'+Muser+' to '+classT+'/chat/1').once('value', function(snapshot) {
         var RB = snapshot.child("username").val(); 
   if(RB === null){Channel = classT+' to '+Muser;}else{Channel = Muser+' to '+classT;}
+Load.get();
 });  
 }
 else{
