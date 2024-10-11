@@ -604,13 +604,20 @@ console.log(contentCall);
 var Channel = '';    
 db.ref('nea/x/user/dm/'+classT+' to '+Muser+'/chat/1').once('value', function(snapshot) {
         var RA = snapshot.child("username").val(); 
-  if(RR === null){
-Channel = classT+' to '+Muser;       
+  if(RA === null){
+
+db.ref('nea/x/user/dm/'+Muser+' to '+classT+'/chat/1').once('value', function(snapshot) {
+        var RB = snapshot.child("username").val(); 
+  if(RB === null){Channel = classT+' to '+Muser;}else{Channel = Muser+' to '+classT;}
+});  
 }
 else{
-  Channel = Muser+' to '+classT;
+  Channel = classT+' to '+Muser;
 }
-});  
+  console.log(Channel);  
+  Load.get();
+});
+  
 //container.innerHTML = console.log();
     db.ref('nea/x/user/dm/'+Channel+'/chat/1').once('value', function(snapshot) {
         var RR = snapshot.child("username").val();
@@ -621,6 +628,8 @@ document.getElementById('overlay').style.display = 'none';
 }
       
     });    
+const Load = {
+  get : function () {    
 db.ref('nea/x/user/dm/'+Channel+'/chat/').on('child_added', function(snapshot){
 var val = snapshot.val();
 var key = snapshot.key;
@@ -643,6 +652,8 @@ document.querySelector('.loading').style.display = 'none';
   document.getElementById('overlay').style.display = 'none';
 document.querySelector('.loading').style.display = 'none'; 
    });
+}
+}
 //window.onscroll = function() {ScrollMy()};
 const navE = document.querySelector('.nav');
 function ScrollMy() {
