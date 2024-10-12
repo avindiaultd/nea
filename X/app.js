@@ -1,10 +1,12 @@
 // Firebase Configurations
-var firebaseConfig = {
-    apiKey: "AIzaSyDDFphd7ioHLcmCfXt-eta8ljX0ex2yV6s",
-    projectId: "my-project-1409b",
-    storageBucket: "com.myproject.myproject",
-    messagingSenderId: "130527465681",
-    appId: "1:130527465681:android:7ff6c5732b020575e275f0"
+const firebaseConfig = {
+  apiKey: "AIzaSyDHL4CSEjJBdNUI4IozRI-7Suqd4UqUoDI",
+  authDomain: "avindia-db2bd.firebaseapp.com",
+  databaseURL: "https://avindia-db2bd-default-rtdb.firebaseio.com",
+  projectId: "avindia-db2bd",
+  storageBucket: "avindia-db2bd.appspot.com",
+  messagingSenderId: "970872368951",
+  appId: "1:970872368951:web:fe17e10b3a366f86c6b4b2"
 };
 // Initializing Firebase App
 firebase.initializeApp(firebaseConfig);
