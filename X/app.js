@@ -68,7 +68,7 @@ const sendPush = () => {
         method: "POST",
         headers: new Headers({
             // Add your server key after key=
-            Authorization: "key=AAAAHmQLENE:APA91bEp6wXGwd8c1L96dh5wJ3x8HVCXM7_XDgxuoj1vhjUo2KfjDPbfGylXR93T6Cc4d-XdcT0rTjE2cq06toP5oFN7knP8bw3wvwiHYekbw2LcSZ3MD6jwrc72HanR9SY_Y27Uillr",
+            Authorization: "key=ez5sXRH-vcFy-F0KX2MpxQ:APA91bF_J8cXCmrAKT-hK_VO7PVciO5P1mc2yrgM3G_atZZ3I2A7z07TU1jpmqdzHDCKR7erJF35al6ExOmn2rw8Z4yXn91HDqzET1QlJFaFRVmJnNgrp9Dh6ZBqo23Lrh7wZreX0FzV",
             "Content-Type": "application/json"
         }),
         body: JSON.stringify(body)
