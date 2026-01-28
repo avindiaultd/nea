@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="height=device-height,initial-scale=1">
+  <meta name="theme-color" content="#fff">
+  <meta name="msapplication-navbutton-color" content="#fff">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/gzgKGpm/20230824-151647.png">
+  <title>Chat test web</title>
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel="stylesheet">
+  <meta name="description" content="Let's Smile">
+  <meta name="author" content="AV INDIA ULTD*">
+</head>
+<body>
+  <div class="Main_Body">
+    
+<!-- This portion of page contains the
+    three main components of page
+(user data tab + message body + typing tab )    -->    
+    
+    <div class="User_Head">
+      <div class="dp">
+        <img id="dp" src="https://i.ibb.co/3MTFVDp/Owner.jpg">
+      </div>
+      <div class="txtD">
+        <p class="Name">Azad Verma</p>       
+        <p class="Sub">Hello , I am using av india products</p>
+      </div>
+      <div class="Icons">
+        <button class="material-icons md-25">call</button>
+        <button class="material-icons md-25">folder</button>
+        <button class="material-icons md-25">more_vert</button>
+      </div>
+    </div>
+      <div class="view">  
+          <div class="message received">
+                <p>Hello ! How are you</p>
+                <span class="time">11:00 AM</span>
+            </div>
+            <div class="message sent">
+                <p>Hey! I'm fine, thanks for asking!</p><span class="time">11:01 AM <i class="material-icons md-25"></i></span>
+            </div>
+          <button onclick="requestNotificationPermission()">Enable Notifications</button>
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Info!</strong> This is an information message.
+</div>
+
+      </div>
+      
+      <div class="Message">
+                    <div class="addF">
+              <button class="material-icons md-25">add</button>
+          </div>
+          <div class="typo">
+              <textarea type="text"rows="5" cols="30" placeholder="Type a message..."></textarea>
+          </div>
+          <div class="send">
+              <button class="material-icons md-25">send</button>
+          </div>
+      </div>      
+      
+  </div>
+</body>
+
+<style>
+*{margin: 0px; font-family: verdana;}
+.Main_Body{
+  width: 100%;
+}
+.Main_Body .User_Head{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    background-color: #F7F7F7;
+    margin: 0px 0px 0px 0px;
+    position: fixed;
+    top: 0px;
+}
+.Main_Body .User_Head .dp{
+    margin: auto;
+}
+.Main_Body .User_Head .dp #dp{
+    height: 44px;
+    width: 44px;
+    border-radius: 25px;
+    object-fit: cover;
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+    margin-left: 5px;
+}
+.Main_Body .User_Head .txtD{
+    margin: auto;
+    width: auto;
+}
+.Main_Body .User_Head .txtD .Name{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0px 0px 0px 0px;
+    margin: 4px;
+}
+.Main_Body .User_Head .txtD .Sub{
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0px 0px 0px 0px;
+    margin: 4px;
+}
+.Main_Body .User_Head .Icons{
+    margin: auto;
+}
+.Main_Body .User_Head .Icons button{
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    border: 0px;
+    background-color: #F7F7F7;
+    font-size: 22px;
+    font-weight: 400;
+    color: #000;
+    width: 50px;
+}
+.Main_Body .Message{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    background-color: #F7F7F7;
+    margin: 0px 0px 0px 0px;
+    position: fixed;
+    bottom: 0px;
+}
+.Main_Body .Message .typo{
+    width: 100%;
+    height: px;
+    display: flex;
+    background-color: #F7F7F7;
+    margin: auto;   
+    border-radius: 20px;
+}
+.Main_Body .Message .typo textarea{
+    flex-grow: 1;
+    padding: 20px 0px 20px 10px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    height: 20px;
+    
+}
+.Main_Body .Message .addF{
+    margin: auto;
+}
+.Main_Body .Message .addF button{
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    border: 0px;
+    background-color: #F7F7F7;
+    font-size: 22px;
+    font-weight: 400;
+    color: #000;
+    width: 50px;
+    border-radius: 25px;
+}
+.Main_Body .Message .send{
+    margin: auto;
+}
+.Main_Body .Message .send button{
+    margin: 0px;
+    padding: 5px 5px 5px 5px;
+    border: 0px;
+    background-color: #F7F7F7;
+    font-size: 22px;
+    font-weight: 400;
+    color: #000;
+    width: 50px;
+    border-radius: 25px;
+}
+.Main_Body .view{
+    height: ;
+    width: 100vw;
+    padding: 80px 0px 80px 0px;
+    background-color: ;
+}
+.message {
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+    
+}
+.received {
+    background-color: #f7f7f7;
+    
+    border-radius: 0px 50px 50px 50px;
+    
+}
+
+.sent  {
+    background-color: #8505ff; /* Light green for sent messages */
+    
+    border-radius: 20px 20px 10px 20px;
+    color: #fff;
+    float: right;padding: 10px 10px 10px 10px; 
+    max-width: 80%; overflow-wrap: break-word; height: auto; 
+    /* Pushes sent messages to the right */
+}
+.received  {
+    background-color: #f7f7f7; /* Light green for sent messages */
+    
+    border-radius: 10px 20px 20px 20px;
+    color: #000;
+    float: left;padding: 10px 10px 10px 10px; 
+    max-width: 80%; overflow-wrap: break-word; height: auto; 
+    /* Pushes sent messages to the right */
+}
+
+.time {
+    display: ;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 5px;
+    float: right;
+    
+    text-align: right;
+}
+.sent .time{color: #fff;}
+</style>
+<script>
+function requestNotificationPermission() {
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  } else if (Notification.permission === "granted") {
+    // Permission already granted, show notification
+    new Notification("Notifications are already enabled!");
+  } else if (Notification.permission !== "denied") {
+    // Request permission
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        new Notification("Thank you for enabling notifications!");
+      }
+    });
+  }
+}
+const notification = new Notification("Hi there!", {
+  body: "This is the body of the notification.",
+  icon: "path/to/icon.png" // Optional icon
+});
+
+</script>
+</html>
+
